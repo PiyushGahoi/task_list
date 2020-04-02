@@ -1,0 +1,24 @@
+.List{
+    color:#fff;
+    width: 300px;
+    background-color: #bf07ac;
+    height:50px;
+    margin:20px auto;
+    border-radius: 5px;
+}
+
+.List p{
+    padding:10px;
+}
+
+.List.High{
+    background-color: #550255;
+}
+
+.List.Medium{
+    background-color: #aa18aa;
+}
+
+.List.Low{
+    background-color: #e100ff;
+}

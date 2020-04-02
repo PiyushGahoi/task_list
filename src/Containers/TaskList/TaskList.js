@@ -10,6 +10,9 @@ import {connect} from 'react-redux';
 import Aux from '../../Hoc/Auxi';
 
 class TaskList extends Component{
+    componentDidMount(){
+        document.title=" Your Personal TaskList"
+    }
     state={
         currentTask:{
             title:'',

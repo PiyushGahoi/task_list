@@ -41,14 +41,16 @@ class TaskList extends Component{
         this.props.taskadded(event.target.title.value,event.target.description.value,event.target.date.value,event.target.priority.value);
     }
     editTaskHandler=(event)=>{
+        // alert(event.target.title.value);
         this.setState({adding:false,details:false,editing:false});
         event.preventDefault();
         // console.log(event.target)
-        this.props.taskedited(event.target.title.value,event.target.description.value,event.target.date.value,event.target.priority.value);
+        this.props.taskedited(this.state.currentTask.id,event.target.title.value,event.target.description.value,event.target.date.value,event.target.priority.value);
     }
 
     openDetails=(task)=>{
         this.setState({currentTask:task,details:true});
+        // console.task(currentTask.id);
     }
 
     editingHandler=(task)=>{
@@ -94,7 +96,7 @@ const mapStateToProps = state => ({
   
 const mapDispatchToProps = dispatch => ({
     taskadded:(title,description,date,priority)=>dispatch({type:"ADD_TODO",title:title,description:description,date:date,priority:priority}),
-    taskedited:(title,description,date,priority)=>dispatch({type:"EDIT_TODO",title:title,description:description,date:date,priority:priority}),
+    taskedited:(id,title,description,date,priority)=>dispatch({type:"EDIT_TODO",id:id,title:title,description:description,date:date,priority:priority}),
     taskDeleted:(id)=>dispatch({type:"DELETE_TODO",id})
 })
 
